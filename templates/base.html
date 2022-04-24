@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IlhomjonDev Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <style>
+        .oxiri {
+        text-align:right;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">IlhomjonDev Blog</a></h1>
+    </header>
+    {% if user.is_authenticated %}
+        <p>Xush kelibsiz {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">Chiqib ketish</a></p>
+    {% else %}
+        <p>
+            <a href="{% url 'login' %}">Saytga kirish</a> |
+            <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+        </p>
+    {% endif %}
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <footer class="oxiri">
+        <h3><a href="{% url 'post_new' %}">Post qo'shish</a> </h3>
+    </footer>
+</body>
+</html>
