@@ -11,9 +11,14 @@
 
 </head>
 <body>
-    <header>
-        <h1><a href="{% url 'home' %}">IlhomjonDev Blog</a></h1>
-    </header>
+      <header>
+          <div class="nav-left">
+              <h1><a href="{% url 'home' %}">Ilhomjondev Blog</a></h1>
+          </div>
+          <div class="nav-righ">
+              <a href="{% url 'post_new' %}">+ Yangi Post qo'shish</a>
+          </div>
+      </header>
     {% if user.is_authenticated %}
         <p>Xush kelibsiz {{ user.username }}!</p>
         <p><a href="{% url 'logout' %}">Chiqib ketish</a></p>
@@ -27,8 +32,5 @@
         {% block content %}
         {% endblock content %}
     </div>
-    <footer>
-        <h3><a href="{% url 'post_new' %}">Post qo'shish</a> </h3>
-    </footer>
 </body>
 </html>
