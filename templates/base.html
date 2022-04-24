@@ -8,11 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <style>
-        .oxiri {
-        text-align:right;
-        }
-    </style>
 
 </head>
 <body>
@@ -32,7 +27,7 @@
         {% block content %}
         {% endblock content %}
     </div>
-    <footer class="oxiri">
+    <footer>
         <h3><a href="{% url 'post_new' %}">Post qo'shish</a> </h3>
     </footer>
 </body>
